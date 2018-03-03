@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!-- Codificação caracteres da página -->
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="http://bruno-francisco.com/card/favazul.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="card.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <script src="jquery.js"></script>
+  <script type="text/javascript" src="jsui.js"></script>
+  <!--<script type="text/javascript" src="linkedin.js" async defer></script>-->
+  <meta name="theme-color" content="#5d93d1">
+  <meta name="msapplication-navbutton-color" content="#5d93d1" />   
+  <meta name="apple-mobile-web-app-capable" content="yes">  
+  <meta name="apple-mobile-web-app-status-bar-style" content="#5d93d1">
+
+  <!-- SEO Geral -->
+  <title>BRUNO FRANCISCO</title>
+  <meta name="description" content="Web Designer/Developer.">
+  <link rel="canonical" href="http://bruno-francisco.com/portfolio">
+  <meta name="author" content="Bruno Francisco">
+  <meta name="robots" content="index">
+  
+  <!-- Open Graph Facebook -->
+  <meta property="og:title" content="BRN FRNCSC| WB DVLPR">
+  <meta property="og:description" content="Web Designer/Developer."/>
+  <meta property="og:url" content="http://bruno-francisco.com/portfolio">
+  <meta property="og:site_name" content="Bruno Francisco"/>
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="http://bruno-francisco.com/card/image.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:title" content="Título da página">
+  <meta name="twitter:description" content="Web Designer/Developer.">
+  <meta name="twitter:url" content="http://bruno-francisco.com/portfolio">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="http://bruno-francisco.com/card/image.jpg">
+  <meta name="twitter:creator" content="@francBrunis">
+	<script>
+		$(document).ready(function(){
+			$('img').attr('draggable','false');
+		$("#plus").click(function (e) {  
+
+  // remover classe ripple
+  $(".ripple").remove();
+
+  // posições
+  var posX = $(this).offset().left,
+      posY = $(this).offset().top,
+      buttonWidth = $(this).width(),
+      buttonHeight =  $(this).height();
+  
+  // o efeito será criado com este span
+  $(this).prepend("<span class='ripple'></span>");
+
+  
+ // para ficar redondo
+  if(buttonWidth >= buttonHeight) {
+    buttonHeight = buttonWidth;
+  } else {
+    buttonWidth = buttonHeight; 
+  }
+  
+  // saber posição central
+  var x = e.pageX - posX - buttonWidth / 2;
+  var y = e.pageY - posY - buttonHeight / 2;
+  
+ 
+  // cria a classe ripple e consequentemente a animação
+  $(".ripple").css({
+    width: buttonWidth,
+    height: buttonHeight,
+    top: y + 'px',
+    left: x + 'px'
+  }).addClass("rippleEffect");
+});
+		
+
+		$('#plus').click(function(){
+			$('#infs').css('transform','scale(1)');
+		});
+		$('#description span').click(function(){
+			$('#overlay').fadeIn();
+			$('#map').css('transform','scale(1)');
+		});
+		$('#map a, #overlay').click(function(){
+			$('#overlay').fadeOut();
+			$('#map').css('transform','scale(0)');
+		});
+
+		$('.icon-user').click(function(){
+			$('#overlay').fadeIn().css('z-index','2');
+			$('#bio').css('transform','scale(1)').css('z-index','3');
+		});
+		
+		$('#bio a, #overlay').click(function(){
+			$('#overlay').fadeOut().css('z-index','0');
+			$('#bio').css('transform','scale(0)').css('z-index','0');
+		});
+		
+		$('.icon-file-text-alt').click(function(){
+			$('#overlay').fadeIn();
+			$('#cv a').delay(2000).show();
+			$('#cv').css('transform','scale(1)');
+		});
+
+		$('#cv a').click(function(){
+			$('#overlay').fadeOut();
+			$('#cv').css('transform','scale(0)');
+			$('#cv a').hide();
+		});
+
+
+		$('#header a, #overlay').click(function(){
+			$('#overlay').fadeOut();
+			$('#infs').css('transform','scale(0)');
+		});
+
+		setTimeout(function(){
+				$('#tela h1').fadeIn();
+		}, 77000);
+		$('#death i').click(function(){
+			$('#death').css('z-index','-1').css('opacity','0');
+		})
+		});
+		function fullScreen() {
+var el = document.documentElement
+    , rfs = // for newer Webkit and Firefox
+           el.requestFullScreen
+        || el.webkitRequestFullScreen
+        || el.mozRequestFullScreen
+        || el.msRequestFullScreen
+;
+if(typeof rfs!="undefined" && rfs){
+  rfs.call(el);
+} else if(typeof window.ActiveXObject!="undefined"){
+  // for Internet Explorer
+  var wscript = new ActiveXObject("WScript.Shell");
+  if (wscript!=null) {
+     wscript.SendKeys("{F11}");}}}
+
+	</script>
+<body oncontextmenu="$('#death').css('opacity','1').css('z-index','1');$('.count').each(function () {
+        $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 80000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+}); return false;">
+
+	<div id="screen">
+
+  <div id="container">
+  	<div id="header">
+  		<h2>WEB DESIGNER/FRONT-END</h2>
+  	</div>
+  	<div id="foto"></div>
+  	<div id="description">
+  		<h2>Bruno Francisco</h2>
+  		<i class="icon-map-marker" aria-hidden="true"></i><span>Anywhere</span>
+  	</div>
+  	<button id="plus"><i class="icon-heart" aria-hidden="true"></i></button>
+  </div>
+	
+	<div id="infs">
+		
+		<div id="header">
+			<a href="#">x</a>
+			<h2>INFORMATION</h2>
+		</div>
+
+		<div id="name">
+			<img src="foto2.png" alt="">
+			<div>
+			<h2>Bruno Francisco</h2><span>Web Designer/Front-End</span>
+			</div>
+		</div>
+		<div id="table">
+			<ul id="title">
+				<li>Wordpress </li>
+				<li>Scratch Code </li>
+				<li>Design </li>
+			</ul>
+			<ul id="items">
+				<li>Different Solutions</li>
+				<li>SEO Techniques</li>
+				<li>Responsive</li>
+				<li>& more...</li>
+			</ul>
+		</div>
+
+		<div id="contact">
+			<li><i class="icon-phone" aria-hidden="true"></i> <a href="tel:+5519999814507">+5519999814507</a><p>Whatsapp</p></li>
+			<li><i class="icon-envelope" aria-hidden="true"></i> <a href="mailto:contato@bruno-francisco.com">Contato@bruno-francisco.com</a><p>Email</p></li>
+			<li><i class="icon-globe" aria-hidden="true"></i> <a href="http://bruno-francisco.com/portfolio" target="blank_">Bruno-Francisco.com</a><p>Portfolio</p></li>
+		</div>
+		<ul id="icon">
+		
+		<li><i class="icon-user"></i> Bio</li>
+		<li><i class="icon-file-text-alt"></i> Resumé</li>
+		<!--<li><i class="icon-linkedin-sign"></i> Linked In</li>-->
+	</ul>
+	</div>
+			<div id="bio">
+				<a href="#">x</a>
+		<h2>BRUNO FRANCISCO</h2>
+		<h3> FRONT-END WEB DEVELOPER</h3>
+
+		<br><br><br>
+
+		<p>Sou Bruno, autor e webmaster deste portfolio e blog, minha personalidade é classificada como INFJ (passo por muitos maus entendidos por isso), talvez por isso escolhi esta profissão, que me proporciona a 'solidão'. <br><br>
+
+
+		Me formei de Design Gráfico em 2016 pela UNIMEP. Desde pequeno sempre gostei de criar coisas, e sempre tive facilidade em desenhar, então busquei o curso de DG que foi decepcionante, mas durante um estágio de fiz o Desenvolvimento Web me acendeu uma paixão. <br><br>
+
+		Com Web Development posso sempre estar criando, e com resultados 'imediatos'. <br><br>
+
+
+		Gosto de tecnologia em geral, especialmente em coisas diferentes, como diferentes SOs, softwares alternativos.
+
+		Gosto de ouvir músicas profundas e 'insanas' que falem coisas não triviais, o mesmo vale para filmes e conteúdo que consumo em geral.
+		</p>
+
+
+
+
+
+			</div>
+<div id="overlay"></div>
+
+	<div id="map">
+		<h2>I'M CURRENTLY HERE, PLANNING THE NEXT TRIP!</h2>
+		<a href="#" id="close">x</a>
+		<iframe width="100%" height="80%" id="gmap_canvas" src="https://maps.google.com/maps?q=Piracicaba&t=&z=5&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="yes" marginheight="0" marginwidth="0"></iframe>
+	</div>
+	
+  </div>
+  <div id="death">
+  	<div id="tela">
+  	<h2>:(</h2>
+	<p>Your character ran into a problem and needs to be<br> refreshed. I'm just shutting off  your computer.<br> BE WARNED! (<span class="count">100</span>% complete )</p>
+
+	<small>If you'd like to know more, you can search online later for this <br> error: LOVE_IS_ETERNAL_STRONGER_THAN_THE_DEEPEST_WATERS</small>
+
+	<h1>BRINKS! <i class="icon-heart" aria-hidden="true"></i></h1>
+	
+	</div>
+  </div>
+  <div id="cv">
+		<a href="#" style="text-decoration: none;color:#666;">x</a>
+  	<iframe src="resume/index.html" frameborder="0"></iframe></div>
+  <footer><center>&copy Bruno Francisco 2015 and counting - All Rights Reserveds.</center></footer>
+</body>
+</html>
